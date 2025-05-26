@@ -1,0 +1,470 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e8f5e9;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #333;
+}
+
+h2 {
+  color: #1b5e20;
+  margin-bottom: 15px;
+  font-size: 24px;
+  text-align: center;
+}
+
+h3 {
+  color: #2e7d32;
+  margin: 20px 0 10px;
+  font-size: 18px;
+}
+
+h4 {
+  color: #2e7d32;
+  margin: 20px 0 10px;
+  font-size: 18px;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 900px;
+}
+
+.form-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 180px;
+}
+
+label {
+  font-weight: 600;
+  color: #2e7d32;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 14px;
+}
+
+select, input {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #a5d6a7;
+  font-size: 14px;
+}
+
+button {
+  padding: 10px 16px;
+  border-radius: 6px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  transition: all 0.3s;
+}
+
+button:hover {
+  background-color: #3d8b40;
+  transform: translateY(-2px);
+}
+
+button.secondary {
+  background-color: #2196F3;
+}
+
+button.secondary:hover {
+  background-color: #1976D2;
+}
+
+.nombre-inputs {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.input-with-icon i {
+  color: #2e7d32;
+  font-size: 14px;
+}
+
+canvas {
+  margin: 25px 0;
+  border: 1px solid #4caf50;
+  border-radius: 10px;
+  background: #f5fff5;
+}
+
+.restricciones-section {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.restriccion-group {
+  flex: 1;
+  min-width: 200px;
+}
+
+.restriccion-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.restriccion-item input {
+  width: 80px;
+}
+
+.canvas-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.bus-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.bus-table th, .bus-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.bus-table th {
+  background-color: #e8f5e9;
+}
+
+.bus-table input {
+  width: 90%;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.bus-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.bus-capacity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bus-capacity input {
+  width: 80px;
+}
+
+.modelo-matematico {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  border-left: 4px solid #4caf50;
+}
+
+.formula {
+  font-size: 16px;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  overflow-x: auto;
+}
+
+.funcion-objetivo-simple {
+  font-family: monospace;
+  font-size: 18px;
+  background-color: #f8f8f8;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border-left: 3px solid #4CAF50;
+}
+
+.error {
+  border-color: #ff5252 !important;
+}
+
+.error-message {
+  color: #ff5252;
+  font-size: 12px;
+  margin-top: 5px;
+  display: none;
+}
+
+.demanda-section {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+}
+
+.demanda-section h3 {
+  margin-top: 0;
+  color: #495057;
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.demanda-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.demanda-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.demanda-item label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #343a40;
+}
+
+.demanda-item input {
+  width: 80%;
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+/* Ajustes para las tablas de buses existentes */
+.bus-table-container {
+  margin-bottom: 25px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.bus-header {
+  background-color: #e9ecef;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bus-capacity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bus-capacity span {
+  font-weight: bold;
+}
+
+.bus-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bus-table th, .bus-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #dee2e6;
+}
+
+.bus-table th {
+  background-color: #f1f3f5;
+  font-weight: bold;
+}
+
+.bus-table input {
+  width: 80px;
+  padding: 6px;
+  text-align: center;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.resultado-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.resultado-table th, .resultado-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.resultado-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.costo-total {
+  font-size: 1.2em;
+  color: #2e7d32;
+  margin-top: 15px;
+}
+
+.noroeste-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+.noroeste-table th, .noroeste-table td {
+  border: 1px solid #000;
+  padding: 8px 12px;
+  text-align: center;
+}
+
+.noroeste-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.noroeste-table tr:last-child th {
+  background-color: #e0e0e0;
+}
+
+.total-cost {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #2a5f2a;
+}
+
+/* Estilos para la tabla de resultados con celdas diagonales */
+.noroeste-table {
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+  border: 2px solid #333;
+}
+
+.noroeste-table th,
+.noroeste-table td {
+  border: 1px solid #333;
+  text-align: center;
+  padding: 0;
+  width: 80px;
+  height: 60px;
+  position: relative;
+}
+
+.noroeste-table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  padding: 8px;
+}
+
+.diagonal-cell {
+  position: relative;
+}
+
+/* Línea diagonal (de arriba izquierda a abajo derecha) */
+.diagonal-cell::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, transparent calc(50% - 1px), #000, transparent calc(50% + 1px));
+  pointer-events: none; /* Para que no interfiera con clicks */
+}
+
+.diagonal-top {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  text-align: right;
+  padding: 2px;
+}
+
+/* Contenedor para el valor en rojo (ahora en la parte superior izquierda) */
+.diagonal-bottom {
+  position: absolute;
+  bottom: 50%;
+  left: 5px;
+  text-align: left;
+  padding: 2px;
+  
+}
+
+/* Celdas de oferta (verde) */
+.oferta-cell {
+  background-color: #90EE90;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+/* Fila y celdas de demanda (verde) */
+.demanda-row th {
+  background-color: #90EE90;
+}
+
+.demanda-cell {
+  background-color: #90EE90;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+.total-cell {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+/* Estilo para el costo total */
+.total-cost {
+  font-size: 18px;
+  margin-top: 15px;
+  text-align: center;
+  color: #2e7d32;
+}

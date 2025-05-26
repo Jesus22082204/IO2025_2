@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modelo de Transporte</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+  <h2>Modelo de Transporte</h2>
+
+  <div class="container">
+    <div class="form-section">
+      <div class="form-group">
+        <label>Tipo de problema:
+          <select id="tipo" onchange="actualizarEtiquetas()">
+            <option value="buses">Buses y Ciudades</option>
+            <option value="mercancia">Mercancía y Destinos</option>
+          </select>
+        </label>
+
+        <label>
+          <span id="label1-text">Cantidad de buses:</span>
+          <input type="number" id="origenes" min="1" max="4" value="1" required
+            onchange="generarInputs(); validarNumeroMenu(this);">
+          <div class="error-message" id="error-origenes"></div>
+        </label>
+        <label>
+          <span id="label2-text">Cantidad de ciudades:</span>
+          <input type="number" id="destinos" min="1" max="4" value="1" required
+            onchange="generarInputs(); validarNumeroMenu(this);">
+          <div class="error-message" id="error-destinos"></div>
+        </label>
+
+        <button id="btn-mostrar-red" onclick="dibujarRed()">
+          <i class="fas fa-project-diagram"></i> Mostrar red
+        </button>
+      </div>
+
+      <div class="nombre-inputs" id="inputs-origenes"></div>
+      <div class="nombre-inputs" id="inputs-destinos"></div>
+    </div>
+  </div>
+
+  <div class="canvas-container">
+    <canvas id="canvas-red" width="600" height="380"></canvas>
+  </div>
+
+  <div id="formulacion-simbolica" class="container" style="margin-top:20px;"></div>
+  <br>
+
+  <div id="datos-section" class="container hidden">
+    <h3>Ingrese los datos del problema</h3>
+    <div id="tablas-buses"></div>
+
+    <button onclick="generarModeloMatematico()" class="secondary">
+      <i class="fas fa-calculator"></i> Generar Modelo Matemático
+    </button>
+
+  </div>
+
+  <div id="modelo-matematico" class="container hidden">
+    <h3>Modelo Matemático</h3>
+
+    <div class="modelo-matematico">
+      <h4>Función Objetivo (Minimizar costos):</h4>
+      <div id="funcion-objetivo" class="formula"></div>
+
+      <h4>Restricciones de oferta:</h4>
+      <div id="restricciones-oferta" class="formula"></div>
+
+      <h4>Restricciones de demanda:</h4>
+      <div id="restricciones-demanda" class="formula"></div>
+    </div>
+
+    <button onclick="resolverEsquinaNoroeste()">Resolver por Esquina Noroeste
+    </button>
+    <div id="resultado"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
