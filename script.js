@@ -773,31 +773,26 @@ function mostrarResultadoEsquinaNoroeste(solucion, costos, ofertas, demandas, co
   contenidoHTML += tabla;
   contenidoHTML += '<div class="modelo-matematico">';
 
-  // 2.1 Función objetivo final (asignación × solución)
-  contenidoHTML += '<h4>Función Objetivo Final:</h4>';
-  let funcionObjetivoFinal = "Min Z = ";
-  const terminosValidos = [];
-  let valorFuncionObjetivo = 0;
+  // 2.1 Función objetivo final (asignación × costo)
+contenidoHTML += '<h4>Función Objetivo Final:</h4>';
+let funcionObjetivoFinal = "Min Z = ";
+const terminosValidos = [];
+let valorFuncionObjetivo = 0;
 
-  for (let i = 0; i < m; i++) {
-    for (let j = 0; j < n; j++) {
-      if (solucion[i][j] > 0) {
-        // Obtener la asignación que ingresó el usuario
-        const asignacionUsuario = parseFloat(document.getElementById(`asignacion-${i}-${j}`).value) || 0;
-        
-        // Multiplicar asignación del usuario × solución del método
-        const producto = asignacionUsuario * solucion[i][j];
-        valorFuncionObjetivo += producto;
-        
-        terminosValidos.push(`${asignacionUsuario} × ${solucion[i][j]}`);
-      }
+for (let i = 0; i < m; i++) {
+  for (let j = 0; j < n; j++) {
+    if (solucion[i][j] > 0) {
+      const asignacion = solucion[i][j];
+      const costo = parseFloat(costos[i][j]);
+      const producto = asignacion * costo;
+      valorFuncionObjetivo += producto;
+      terminosValidos.push(`${asignacion} × ${costo}`);
     }
   }
+}
 
-  contenidoHTML += `<div class="funcion-objetivo-simple">${funcionObjetivoFinal}${terminosValidos.join(" + ")}</div>`;
-
-  // Agregar el valor final de la función objetivo
-  contenidoHTML += `<div class="variable-adicional">Función Objetivo Final = ${valorFuncionObjetivo}</div>`;
+contenidoHTML += `<div class="funcion-objetivo-simple">${funcionObjetivoFinal}${terminosValidos.join(" + ")}</div>`;
+contenidoHTML += `<div class="variable-adicional">Función Objetivo Final = ${valorFuncionObjetivo}</div>`;
 
   // 2.2 Restricciones de oferta finales
   contenidoHTML += '<h4>Restricciones de Oferta Finales:</h4>';
@@ -898,7 +893,6 @@ function dibujarGrafoSolucion(solucion, costos) {
     ctx.textAlign = "right";
     ctx.fillText(nombre, origenX - 30, y + 35);
   }
-  //
 
   // Dibujar etiqueta de grupo para destinos (mismo estilo que dibujarRed)
   ctx.font = "bold 14px Arial";
